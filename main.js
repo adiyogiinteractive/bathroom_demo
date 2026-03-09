@@ -52,6 +52,7 @@ modelViewer.addEventListener("load", async () => {
 
 async function changeWallMaterial (materialIndex = 0)
 {
+    event.preventDefault();
   // Create a new texture from an image
   frontBackWallTexture = await modelViewer.createTexture(frontBackWallTexturePath + wallMaterials[materialIndex]);
   leftRightWallTexture = await modelViewer.createTexture(leftRightWallTexturePath + wallMaterials[materialIndex]);
@@ -63,9 +64,11 @@ async function changeWallMaterial (materialIndex = 0)
 
 async function changeFloorMaterial (materialIndex = 0)
 {
+    event.preventDefault();
   // Create a new texture from an image
   floorTexture = await modelViewer.createTexture(floorTexturePath + floorMaterials[materialIndex]);
   
   // Apply the new texture
   floorMaterial.pbrMetallicRoughness.baseColorTexture.setTexture(floorTexture);
 }
+
