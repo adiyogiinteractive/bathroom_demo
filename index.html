@@ -20,7 +20,7 @@
         auto-rotate 
         ar >
     </model-viewer> -->
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none;" id="leftMenu">
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none; z-index: 9999;" id="leftMenu">
         <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large" style="text-align: right;">X</button>
         
         <b class="w3-bar-item w3-button">Walls</b>
@@ -38,7 +38,7 @@
         <a href="" class="w3-bar-item w3-button" onclick="changeFloorMaterial(3)">Floor 4</a>
 
     </div>
-    <div class="w3-teal" style="display: flex; position: absolute; width: 100%;">
+    <div class="w3-teal" style="display: flex; position: absolute; width: 100%; z-index: 999;">
         <button class="w3-button w3-teal w3-xlarge w3-left" onclick="openLeftMenu()">&#9776;</button>
         
         <div class="w3-container">
@@ -88,6 +88,7 @@
     <script src="main.js"></script>
 </body>
 </html>
+
 
 
 
