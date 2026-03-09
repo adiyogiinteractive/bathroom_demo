@@ -1,4 +1,90 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset='utf-8'><meta http-equiv='X-UA-Compatible' content='IE=edge'><title>Page Title</title><meta name='viewport' content='width=device-width, initial-scale=1'><link rel='stylesheet' type='text/css' media='screen' href='style.css'><script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script></head>
-<body><model-viewer id="model-viewer" class="full-screen" src="models//scene_2.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" shadow-intensity="1" camera-orbit="0deg 90deg 105%" min-camera-orbit="auto 0deg auto" max-camera-orbit="auto 90deg auto"> <div class="progress-bar hide" slot="progress-bar"> <div class="update-bar"></div> </div> <button slot="ar-button" id="ar-button" class="ar-button"> <img src="images/ar_1.png" width="30px"> </button> <div id="error" class="hide">AR is not supported on this device</div> </model-viewer> </body> </html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel="stylesheet" href="w3style.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.1.0/model-viewer.min.js"></script>
+
+</head>
+<body>
+    <!-- <model-viewer class="full-screen"
+        alt="Bill Board" 
+        src="models//bill_bord_01.glb" 
+        shadow-intensity="1" 
+        camera-controls 
+        disable-tap 
+        auto-rotate 
+        ar >
+    </model-viewer> -->
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="leftMenu">
+        <button onclick="closeLeftMenu()" class="w3-bar-item w3-button w3-large" style="text-align: right;">X</button>
+        
+        <b class="w3-bar-item w3-button">Walls</b>
+        <a href="#" class="w3-bar-item w3-button" onclick="changeWallMaterial(0)">Wall 1</a>
+        <a href="#" class="w3-bar-item w3-button" onclick="changeWallMaterial(1)">Wall 2</a>
+        <a href="#" class="w3-bar-item w3-button" onclick="changeWallMaterial(2)">Wall 3</a>
+        <a href="#" class="w3-bar-item w3-button" onclick="changeWallMaterial(3)">Wall 4</a>
+        <a href="#" class="w3-bar-item w3-button" onclick="changeWallMaterial(4)">Wall 5</a>
+        <a href="#" class="w3-bar-item w3-button" onclick="changeWallMaterial(5)">Wall 6</a>
+        <br>
+        <b class="w3-bar-item w3-button">Floors</b>
+        <a href="#" class="w3-bar-item w3-button" onclick="changeFloorMaterial(0)">Floor 1</a>
+        <a href="#" class="w3-bar-item w3-button" onclick="changeFloorMaterial(1)">Floor 2</a>
+        <a href="#" class="w3-bar-item w3-button" onclick="changeFloorMaterial(2)">Floor 3</a>
+        <a href="#" class="w3-bar-item w3-button" onclick="changeFloorMaterial(3)">Floor 4</a>
+
+    </div>
+    <div class="w3-teal" style="display: flex;">
+        <button class="w3-button w3-teal w3-xlarge w3-left" onclick="openLeftMenu()">&#9776;</button>
+        
+        <div class="w3-container">
+            <h5>Interactive Tiles Demo</h5>
+        </div>
+    </div>
+
+    <model-viewer 
+        id="model-viewer"
+        class="full-screen"
+        src="models//scene_1.glb"
+        ar 
+        ar-modes="webxr scene-viewer quick-look" 
+        camera-controls
+        tone-mapping="neutral" 
+        shadow-intensity="1"
+        camera-orbit="0deg 90deg 105%"
+        min-camera-orbit="auto 0deg auto"
+        max-camera-orbit="auto 90deg auto">
+
+        <div class="progress-bar hide" slot="progress-bar">
+            <div class="update-bar"></div>
+        </div>
+        <!-- <button slot="ar-button" id="ar-button">
+            View in your space
+        </button> -->
+        <!-- <div id="ar-prompt">
+            <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
+        </div> -->
+        <button slot="ar-button" id="ar-button" class="ar-button">
+            <img src="images/ar_1.png" width="30px">
+            <!-- <p> Activate AR</p> -->
+        </button>
+        
+        <div id="error" class="hide">AR is not supported on this device</div>
+    </model-viewer>
+    
+    <script>
+        function openLeftMenu() {
+            document.getElementById("leftMenu").style.display = "block";
+        }
+
+        function closeLeftMenu() {
+            document.getElementById("leftMenu").style.display = "none";
+        }
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
